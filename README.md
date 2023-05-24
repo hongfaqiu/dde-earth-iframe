@@ -1,6 +1,6 @@
 # dde-earth-iframe
 
-[![npm version](https://badge.fury.io/js/dde-earth-iframe.svg)](https://badge.fury.io/js/dde-earth-iframe)
+[![gzip size](https://img.shields.io/bundlephobia/minzip/dde-earth-iframe)](https://unpkg.com/dde-earth-iframe) ![npm latest version](https://img.shields.io/npm/v/dde-earth-iframe.svg) ![license](https://img.shields.io/npm/l/dde-earth-iframe)
 
 这是一个用于在网页中嵌入DDE-Earth Iframe的npm包。
 在TypeScript环境下，可以免去查阅操作手册的麻烦。
@@ -19,12 +19,8 @@ npm install dde-earth-iframe --save
 import EarthIframe from 'dde-earth-iframe';
 
 const container = document.getElementById('container');
-const options = {
-  baseUrl: 'https://deep-time.org/map/#/showcase', // 默认值为 "https://deep-time.org/map/#/showcase"
-  // 其他选项...
-};
 
-const earthIframe = new EarthIframe(container, options);
+const earthIframe = new EarthIframe(container);
 
 // 等待初始化完成
 await earthIframe.loadPromise;
