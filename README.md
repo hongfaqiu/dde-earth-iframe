@@ -3,7 +3,7 @@
 
 [![npm version](https://badge.fury.io/js/dde-earth-iframe.svg)](https://badge.fury.io/js/dde-earth-iframe)
 
-这是一个用于在网页中嵌入地球仪的npm包。它基于 [CesiumJS](https://cesium.com/cesiumjs/) 和 [React](https://reactjs.org/) 构建。
+这是一个用于在网页中嵌入地球仪的npm包。
 
 ## 安装
 
@@ -49,6 +49,20 @@ const res = await earthIframe.dispatch('addLayer', {
 
 // 示例: 销毁实例
 earthIframe.destroy();
+```
+
+## 浏览器使用
+
+```html
+<body>
+  <div id="iframeContainer"></div>
+</body>
+
+<script src="//unpkg.com/dde-earth-iframe@latest"></script>
+
+<script>
+  const EarthIframeObj = new EarthIframe("iframeContainer");
+</script>
 ```
 
 ## API
