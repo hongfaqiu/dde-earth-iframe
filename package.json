@@ -1,0 +1,32 @@
+{
+  "name": "dde-earth-iframe",
+  "version": "1.0.0",
+  "description": "DDE Earth Iframe sdk",
+  "type": "module",
+  "source": "src/index.ts",
+  "exports": "./lib/index.modern.js",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.module.js",
+  "unpkg": "./lib/index.umd.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "rimraf lib && microbundle --name EarthIframe",
+    "dev": "microbundle --no-sourcemap --name EarthIframe -f umd watch"
+  },
+  "keywords": [
+    "dde",
+    "iframe",
+    "earth"
+  ],
+  "author": "hongfaqiu",
+  "license": "MIT",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/geojson": "^7946.0.10",
+    "microbundle": "^0.15.1",
+    "rimraf": "^5.0.1",
+    "semantic-release": "^21.0.2",
+    "typescript": "^5.0.4"
+  }
+}

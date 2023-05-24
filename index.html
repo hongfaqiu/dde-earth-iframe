@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dde-earth-iframe</title>
+</head>
+<body>
+  <div id="iframeContainer"></div>
+</body>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  #iframeContainer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  iframe {
+    border: none;
+  }
+</style>
+  
+<script src="./lib/index.umd.js"></script>
+<script>
+
+  const EarthIframeObj = new EarthIframe("iframeContainer", {
+    baseUrl: 'http://localhost:8000/#/showcase',
+    language: "en-US"
+  });
+
+  EarthIframeObj.loadPromise.then(async (obj) => {
+
+    obj.addEventListener('layer:add', (res, type) => {
+      console.log(type, res)
+    })
+
+    obj.addEventListener('layer:render', (res, type) => {
+      console.log(type, res)
+    })
+
+    obj.addEventListener('mapConfig:update', (res, type) => {
+      console.log(type, res)
+    })
+    
+    //添加点geojson
+    const res = await obj.dispatch('addLayer', {
+      layer:{
+        id: 'geojson-point',
+        layerName: 'holes',
+        url: {
+          "type": "FeatureCollection",
+          "name": "test",
+          "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+          "features": [
+          { "type": "Feature", "properties": { "ID": 1, "Source Lng": 120, "Source Lat": 30, "Source Height": 1000, "Heat": 15, "Target Lng": 60, "Target Lat": 15, "Target Height": 5000 }, "geometry": { "type": "Point", "coordinates": [ 120.0, 30.0, 1000.0 ] } },
+          { "type": "Feature", "properties": { "ID": 2, "Source Lng": 125, "Source Lat": 24, "Source Height": 1100, "Heat": 17, "Target Lng": 63, "Target Lat": 19, "Target Height": 5200 }, "geometry": { "type": "Point", "coordinates": [ 125.0, 24.0, 1100.0 ] } },
+          { "type": "Feature", "properties": { "ID": 3, "Source Lng": 130, "Source Lat": 18, "Source Height": 1200, "Heat": 16, "Target Lng": 66, "Target Lat": 23, "Target Height": 5400 }, "geometry": { "type": "Point", "coordinates": [ 130.0, 18.0, 1200.0 ] } },
+          { "type": "Feature", "properties": { "ID": 4, "Source Lng": 135, "Source Lat": 12, "Source Height": 1300, "Heat": 18, "Target Lng": 69, "Target Lat": 27, "Target Height": 5600 }, "geometry": { "type": "Point", "coordinates": [ 135.0, 12.0, 1300.0 ] } },
+          { "type": "Feature", "properties": { "ID": 5, "Source Lng": 140, "Source Lat": 6, "Source Height": 1400, "Heat": 22, "Target Lng": 72, "Target Lat": 31, "Target Height": 5800 }, "geometry": { "type": "Point", "coordinates": [ 140.0, 6.0, 1400.0 ] } },
+          { "type": "Feature", "properties": { "ID": 6, "Source Lng": 145, "Source Lat": 0, "Source Height": 1500, "Heat": 35, "Target Lng": 75, "Target Lat": 35, "Target Height": 6000 }, "geometry": { "type": "Point", "coordinates": [ 145.0, 0.0, 1500.0 ] } },
+          { "type": "Feature", "properties": { "ID": 7, "Source Lng": 150, "Source Lat": -6, "Source Height": 1600, "Heat": 42, "Target Lng": 78, "Target Lat": 39, "Target Height": 6200 }, "geometry": { "type": "Point", "coordinates": [ 150.0, -6.0, 1600.0 ] } },
+          { "type": "Feature", "properties": { "ID": 8, "Source Lng": 155, "Source Lat": -12, "Source Height": 1700, "Heat": 26, "Target Lng": 81, "Target Lat": 43, "Target Height": 6400 }, "geometry": { "type": "Point", "coordinates": [ 155.0, -12.0, 1700.0 ] } },
+          { "type": "Feature", "properties": { "ID": 9, "Source Lng": 160, "Source Lat": -18, "Source Height": 1800, "Heat": 27, "Target Lng": 84, "Target Lat": 47, "Target Height": 6600 }, "geometry": { "type": "Point", "coordinates": [ 160.0, -18.0, 1800.0 ] } },
+          { "type": "Feature", "properties": { "ID": 10, "Source Lng": 165, "Source Lat": -24, "Source Height": 1900, "Heat": 52, "Target Lng": 87, "Target Lat": 51, "Target Height": 6800 }, "geometry": { "type": "Point", "coordinates": [ 165.0, -24.0, 1900.0 ] } },
+          { "type": "Feature", "properties": { "ID": 11, "Source Lng": 170, "Source Lat": -30, "Source Height": 2000, "Heat": 34, "Target Lng": 90, "Target Lat": 55, "Target Height": 7000 }, "geometry": { "type": "Point", "coordinates": [ 170.0, -30.0, 2000.0 ] } },
+          { "type": "Feature", "properties": { "ID": 12, "Source Lng": 175, "Source Lat": -36, "Source Height": 2100, "Heat": 22, "Target Lng": 93, "Target Lat": 59, "Target Height": 7200 }, "geometry": { "type": "Point", "coordinates": [ 175.0, -36.0, 2100.0 ] } },
+          { "type": "Feature", "properties": { "ID": 13, "Source Lng": 180, "Source Lat": -42, "Source Height": 2200, "Heat": 18, "Target Lng": 96, "Target Lat": 63, "Target Height": 7400 }, "geometry": { "type": "Point", "coordinates": [ 180.0, -42.0, 2200.0 ] } }
+          ]
+        },
+        method: 'geojson',
+        renderOptions: {
+          'label-type': 'vector',
+          'color': {r: 0, g: 255, b: 255, a: 1},
+          'label-size': 5,
+          'icon-size': 1,
+          'circle-stroke-color': {r: 255, g: 255, b: 255, a: 1},
+          'circle-stroke-width': 1,
+          opacity: 1,
+        }
+      },
+      options: {
+        zoom: true
+      }
+    })
+
+    // 显示图层管理，但隐藏数据集管理
+    obj.dispatch("componentConfig", { 
+      layerManage: {} 
+    });
+  });
+
+</script>
+
+</html>
