@@ -62,7 +62,7 @@ export declare namespace Iframe {
       sourceId: string;
       targetId: string;
     };
-    'addDataSet': {
+    'addDataSet': Layer.DataSet | {
       name: string;
       id: string;
     };

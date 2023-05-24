@@ -9,6 +9,9 @@ export declare namespace IframeListener {
     'layer:update': Layer.layerManageItem;
     'layer:remove': Layer.layerManageItem;
     'layer:move': Layer.layerManageItem[];
+    'dataSet:add': Layer.DataSet;
+    'dataSet:update': Layer.DataSet;
+    'dataSet:remove': Layer.DataSet;
     'mapConfig:update': Iframe.Event['mapConfig'];
 
     'addAtom': Layer.layerManageItem;

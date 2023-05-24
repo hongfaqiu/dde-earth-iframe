@@ -487,4 +487,18 @@ export namespace Layer {
       requestVertexNormals?: boolean;
     };
   };
+
+  export type DataSet = {
+    name: string;
+    id: string;
+    filterable?: boolean;
+    /** 是否开启自动根据全局时间添加数据集图层功能 */
+    autoGeoLayerAdd?: boolean;
+    params?: {
+      top?: number;
+      base?: number;
+      spatialWkt?: string | null;
+    };
+    layers: LayerItem[];
+  };
 }
