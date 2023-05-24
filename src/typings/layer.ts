@@ -1,12 +1,12 @@
-import type { API } from './api';
-import type { GeoJsonCommonStyle, GeoJsonPointStyle, GeoJsonLineStyle, GeoJsonPolygonStyle } from './geojsonStyle';
-import type { MapV } from './mapv';
+import { API } from "./api";
+import { GeojsonStyle } from "./geojsonStyle";
+import { MapV } from "./mapv";
 
-export namespace Layer {
+export declare namespace Layer {
   /**
    * 图层元数据
    */
-  export type BasicLayer = {
+  type BasicLayer = {
     layerName: string;
     id: string;
     /** 图层url, geojson加载方式传入geojson */
@@ -41,7 +41,7 @@ export namespace Layer {
     customLegend?: LayerLegend;
   }
 
-  export type LoaderInfo = {
+  type LoaderInfo = {
     /** 'EPSG: 4326' | 'EPSG: 3857'，默认为3857 */
     srs?: string;
     minimumLevel?: number,
@@ -51,7 +51,7 @@ export namespace Layer {
   /**
    * 栅格图层元数据格式
    */
-  export type RasterLayerItem = {
+  type RasterLayerItem = {
     method: 'wms' | 'wmts' | 'tms' | 'tdt' | 'amap' | 'arcgis' | 'pic';
     layerType?: 'raster' | 'ogc';
     /** 是否添加鉴权 */
@@ -62,22 +62,22 @@ export namespace Layer {
     renderOptions?: RasterOptions;
   } & BasicLayer;
 
-  export type TMSLegend = {
+  type TMSLegend = {
     type: 'polygon' | 'line' | 'point';
     color: string;
     name: string;
   }[];
 
-  export type LegendColor = string | {
+  type LegendColor = string | {
     a?: number;
     b: number;
     g: number;
     r: number;
   }
 
-  export type LegendImage = string
+  type LegendImage = string
 
-  export type PointLegend = {
+  type PointLegend = {
     type: 'point'
     id?: string
     paint: {
@@ -89,7 +89,7 @@ export namespace Layer {
     desc: string
   }
 
-  export type LineLegend = {
+  type LineLegend = {
     type: 'line'
     id?: string
     paint: {
@@ -103,7 +103,7 @@ export namespace Layer {
     desc: string
   }
 
-  export type PolygonLegend = {
+  type PolygonLegend = {
     type: 'polygon'
     id?: string
     paint: {
@@ -115,7 +115,7 @@ export namespace Layer {
     desc: string
   }
 
-  export type IconLegend = {
+  type IconLegend = {
     type: 'icon'
     id?: string
     paint: {
@@ -126,7 +126,7 @@ export namespace Layer {
     desc: string
   }
 
-  export type ColorBarLegend = {
+  type ColorBarLegend = {
     type: 'colorBar'
     id?: string
     paint: {
@@ -141,9 +141,9 @@ export namespace Layer {
     }
   }
 
-  export type CustomLegendItem = PointLegend | LineLegend | PolygonLegend | IconLegend | ColorBarLegend
+  type CustomLegendItem = PointLegend | LineLegend | PolygonLegend | IconLegend | ColorBarLegend
 
-  export type LayerLegend = {
+  type LayerLegend = {
     name: string
     tip?: string
     legends: CustomLegendItem[]
@@ -152,7 +152,7 @@ export namespace Layer {
    /**
    * 以tms方式加载的矢量图层元数据格式
    */
-  export type TMSVectorLayerItem = {
+  type TMSVectorLayerItem = {
     method: 'tms';
     layerType: 'vector';
     renderOptions?: RasterOptions;
@@ -162,7 +162,7 @@ export namespace Layer {
    /**
    * 以geojosn方式加载的矢量图层元数据格式
    */
-  export type GeoJsonLayerItem = {
+  type GeoJsonLayerItem = {
     /** geojson链接或对象 */
     url: string | GeoJSON.GeoJSON;
     method: 'geojson' | 'primitive';
@@ -186,7 +186,7 @@ export namespace Layer {
   /**
    * 热力图图层元数据格式
    */
-  export type HeatLayerItem = {
+  type HeatLayerItem = {
     /** 点geojson链接或对象 */
     url: string | GeoJSON.GeoJSON;
     method: 'heat';
@@ -204,7 +204,7 @@ export namespace Layer {
     renderOptions?: HeatOptions;
   } & Omit<BasicLayer, 'url'>;
 
-  export type MapVLayerItem = {
+  type MapVLayerItem = {
     /** 点geojson链接或对象 */
     url: string | GeoJSON.GeoJSON;
     data?: MapV.MapVDataSet;
@@ -216,7 +216,7 @@ export namespace Layer {
   /**
    * 以pbf方式加载的矢量图层元数据格式
    */
-  export type PbfLayerItem = {
+  type PbfLayerItem = {
     url: string | Object;
     method: 'pbf';
     originMethod?: 'pbf' | 'geojson';
@@ -235,7 +235,7 @@ export namespace Layer {
   /**
    * 以cog方式加载的栅格图层元数据格式
    */
-  export type COGLayerItem = {
+  type COGLayerItem = {
     method: 'cog';
     layerType?: 'raster';
     owner?: string;
@@ -248,7 +248,7 @@ export namespace Layer {
   /**
    * nc图层元数据格式
    */
-  export type NCLayerItem = {
+  type NCLayerItem = {
     method: 'nc';
     layerType?: 'nc'
     /** fields默认为 { lon: 'lon', lat: 'lat', U: 'U', V: 'V'} */
@@ -277,7 +277,7 @@ export namespace Layer {
   /**
    * 3dtiles图层元数据格式
    */
-  export type TDTileLayerItem = {
+  type TDTileLayerItem = {
     method: 'tdtiles';
     layerType?: 'tdtiles'
     renderOptions?: TDTileOptions
@@ -286,22 +286,22 @@ export namespace Layer {
   /**
    * kml图层元数据格式
    */
-  export type KMLLayerItem = {
+  type KMLLayerItem = {
     method: 'kml';
     layerType?: 'kml';
     renderOptions?: KMLOptions;
   } & BasicLayer;
 
-  export type LayerItem = RasterLayerItem | HeatLayerItem | MapVLayerItem | TMSVectorLayerItem | GeoJsonLayerItem | PbfLayerItem | COGLayerItem | NCLayerItem | TDTileLayerItem | KMLLayerItem;
+  type LayerItem = RasterLayerItem | HeatLayerItem | MapVLayerItem | TMSVectorLayerItem | GeoJsonLayerItem | PbfLayerItem | COGLayerItem | NCLayerItem | TDTileLayerItem | KMLLayerItem;
 
-  export type LayerMethod = LayerItem['method'];
+  type LayerMethod = LayerItem['method'];
 
-  export type LayerType = LayerItem['layerType'];
+  type LayerType = LayerItem['layerType'];
 
-  export type RenderOptions = LayerItem['renderOptions'];
+  type RenderOptions = LayerItem['renderOptions'];
 
   //  几类图层的渲染配置
-  export type RasterOptions = {
+  type RasterOptions = {
     alpha?: number;
     brightness?: number;
     hue?: number;
@@ -310,7 +310,7 @@ export namespace Layer {
     contrast?: number;
   };
 
-  export type HeatOptions = {
+  type HeatOptions = {
     field?: string
     config?: {
 
@@ -359,18 +359,18 @@ export namespace Layer {
   /**
    * geojson分类型的渲染配置
    */
-  export type GeoJsonOptions = {
+  type GeoJsonOptions = {
     geoJsonType?: 'point',
-    renderOptions?: GeoJsonCommonStyle & GeoJsonPointStyle
+    renderOptions?: GeojsonStyle.GeoJsonCommonStyle & GeojsonStyle.GeoJsonPointStyle
   } | {
     geoJsonType?: 'line',
-    renderOptions?: GeoJsonCommonStyle & GeoJsonLineStyle
+    renderOptions?: GeojsonStyle.GeoJsonCommonStyle & GeojsonStyle.GeoJsonLineStyle
   } | {
     geoJsonType?: 'polygon',
-    renderOptions?: GeoJsonCommonStyle & GeoJsonPolygonStyle
+    renderOptions?: GeojsonStyle.GeoJsonCommonStyle & GeojsonStyle.GeoJsonPolygonStyle
   }
 
-  export type COGOptions = {
+  type COGOptions = {
     renderMethod?: 'SingleBand' | 'ThreeBand';
     R?: number;
     G?: number;
@@ -398,7 +398,7 @@ export namespace Layer {
     nodata?: number;
   } & RasterOptions;
 
-  export type PbfOptions = {
+  type PbfOptions = {
     type?: 'single' | 'section' | 'value' | 'bubble';
     config?: {
       /**
@@ -429,7 +429,7 @@ export namespace Layer {
     };
   } & RasterOptions;
 
-  export type NCOptions = {
+  type NCOptions = {
     colorBar?: string[];
     maxParticles?: number;
     particleHeight?: number;
@@ -445,7 +445,7 @@ export namespace Layer {
     }
   };
 
-  export type TDTileOptions = {
+  type TDTileOptions = {
     defaultColor: string;
     conditions?: {
       height: number;
@@ -454,14 +454,14 @@ export namespace Layer {
     showHeight?: number;
   };
 
-  export type KMLOptions = {
+  type KMLOptions = {
     labelColor?: string[];
   }
 
   /**
   * 图层管理的数据类型
   */
-  export type layerManageItem = {
+  type layerManageItem = {
     layerName: string;
     id: string;
     layer: LayerItem;
@@ -471,7 +471,7 @@ export namespace Layer {
     split?: boolean;
   };
 
-  export type TerrainLayer = {
+  type TerrainLayer = {
     layerName: string;
     id: string;
     url?: string | null;
@@ -488,7 +488,7 @@ export namespace Layer {
     };
   };
 
-  export type DataSet = {
+  type DataSet = {
     name: string;
     id: string;
     filterable?: boolean;

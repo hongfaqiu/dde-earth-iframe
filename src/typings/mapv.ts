@@ -1,5 +1,5 @@
 export declare namespace MapV {
-  export interface MapVDataSetItem {
+  interface MapVDataSetItem {
     geometry: GeoJSON.Geometry;
     count?: number;
     /** 点数据时候使用 */
@@ -15,7 +15,7 @@ export declare namespace MapV {
     [key: string]: any;
   }
 
-  export type MapVCommonOptions = {
+  type MapVCommonOptions = {
     /** 层级 */
     zIndex?: number;
     /** 大小值 */
@@ -73,9 +73,9 @@ export declare namespace MapV {
     };
   }
 
-  export type GradientColor = Record<number, string>
+  type GradientColor = Record<number, string>
 
-  export type MapVLabelOptions = {
+  type MapVLabelOptions = {
     show: boolean;
     fillStyle?: string;
     shadowColor?: string;
@@ -84,12 +84,12 @@ export declare namespace MapV {
   }
 
   /** 普通绘制方式 */
-  export type MapVSimpleOptions = {
+  type MapVSimpleOptions = {
     draw: 'simple';
   }
 
   /** 蜂窝状聚类图配置 */
-  export type MapVHoneycombOptions = {
+  type MapVHoneycombOptions = {
     draw: 'honeycomb';
     size?: number;
     /** 网格中显示累加的值总和 */
@@ -98,13 +98,13 @@ export declare namespace MapV {
   }
 
   /** 聚类图配置 */
-  export type MapVClusterOptions = {
+  type MapVClusterOptions = {
     draw: 'cluster';
     label?: MapVLabelOptions;
   }
 
   /** 气泡图配置 */
-  export type MapVBubbleOptions = {
+  type MapVBubbleOptions = {
     draw: 'bubble';
     /** 显示的圆最大半径大小 */
     maxsize?: number;
@@ -113,7 +113,7 @@ export declare namespace MapV {
   }
 
   /** 热力图配置 */
-  export type MapVHeatmapOptions = {
+  type MapVHeatmapOptions = {
     draw: 'heatmap';
     /** 每个热力点半径大小 */
     size?: number;
@@ -124,7 +124,7 @@ export declare namespace MapV {
   }
 
   /** 网格聚类图配置 */
-  export type MapVGridOptions = {
+  type MapVGridOptions = {
     draw: 'grid';
     size?: number;
     gradient?: GradientColor;
@@ -133,7 +133,7 @@ export declare namespace MapV {
   }
 
   /** 颜色渐变图配置 */
-  export type MapVIntensityOptions = {
+  type MapVIntensityOptions = {
     draw: 'intensity';
     /** 最小阈值 */
     min?: number;
@@ -143,7 +143,7 @@ export declare namespace MapV {
   }
 
   /** 颜色分类图配置 */
-  export type MapVCategoryOptions = {
+  type MapVCategoryOptions = {
     draw: 'category';
     splitList?: {
       other: string;
@@ -152,7 +152,7 @@ export declare namespace MapV {
   }
 
   /** 值区间分类图配置 */
-  export type MapVChoroplethOptions = {
+  type MapVChoroplethOptions = {
     draw: 'choropleth';
     /** 按数值区间来展示不同颜色的点 */
     splitList?: {
@@ -163,7 +163,7 @@ export declare namespace MapV {
   }
 
   /** 文本配置 */
-  export type MapVTextOptions = {
+  type MapVTextOptions = {
     draw: 'text';
     fillStyle?: string;
     textAlign?: 'center';
@@ -177,7 +177,7 @@ export declare namespace MapV {
     };
   }
 
-  export type MapVIconOptions = {
+  type MapVIconOptions = {
     draw: 'icon';
     /** 图片旋转角度 */
     rotate?: string;
@@ -197,10 +197,10 @@ export declare namespace MapV {
     sheight?: number;
   }
 
-  export type MapVDataSet = MapVDataSetItem[]
+  type MapVDataSet = MapVDataSetItem[]
 
   /** MapV配置 */
-  export type MapVOptions = MapVCommonOptions & (MapVBubbleOptions | MapVCategoryOptions | MapVChoroplethOptions | MapVClusterOptions | MapVGridOptions | MapVHeatmapOptions | MapVHoneycombOptions | MapVIntensityOptions | MapVSimpleOptions | MapVTextOptions | MapVIconOptions)
+  type MapVOptions = MapVCommonOptions & (MapVBubbleOptions | MapVCategoryOptions | MapVChoroplethOptions | MapVClusterOptions | MapVGridOptions | MapVHeatmapOptions | MapVHoneycombOptions | MapVIntensityOptions | MapVSimpleOptions | MapVTextOptions | MapVIconOptions)
 
   /**
    * DataSet
@@ -208,7 +208,7 @@ export declare namespace MapV {
    * A data set can:
    * - add/remove/update data
    * - gives triggers upon changes in the data
-   * - can  import/export data in various data formats
+   * - can  import/data in various data formats
    * @param {Array} [data]    Optional array with initial data
    * the field geometry is like geojson, it can be:
    * {
@@ -231,7 +231,7 @@ export declare namespace MapV {
    * @param {Object} [options]   Available options:
    * 
    */
-  export class DataSet {
+  class DataSet {
     constructor(data: MapVDataSet);
     /**
      * 通过此方法可以获取当前数据集的数据
