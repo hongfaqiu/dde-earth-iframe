@@ -1,9 +1,9 @@
- 
 # dde-earth-iframe
 
 [![npm version](https://badge.fury.io/js/dde-earth-iframe.svg)](https://badge.fury.io/js/dde-earth-iframe)
 
-这是一个用于在网页中嵌入地球仪的npm包。
+这是一个用于在网页中嵌入DDE-Earth Iframe的npm包。
+在TypeScript环境下，可以免去查阅操作手册的麻烦。
 
 ## 安装
 
