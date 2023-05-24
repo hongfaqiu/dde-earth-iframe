@@ -22,6 +22,10 @@
   ],
   "author": "hongfaqiu",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hongfaqiu/dde-earth-iframe/issues"
+  },
+  "homepage": "https://github.com/hongfaqiu/dde-earth-iframe#readme",
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",

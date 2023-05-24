@@ -30,10 +30,7 @@
 <script src="./lib/index.umd.js"></script>
 <script>
 
-  const EarthIframeObj = new EarthIframe("iframeContainer", {
-    baseUrl: 'http://dev.deeptime-engine.com/map/#/showcase',
-    language: "en-US"
-  });
+  const EarthIframeObj = new EarthIframe("iframeContainer");
 
   EarthIframeObj.loadPromise.then(async (obj) => {
 
