@@ -206,6 +206,20 @@ export declare namespace Iframe {
       oneInstance?: boolean;
       /** 画图工具方法 */
       operate: 'start' | 'destroy';
+    };
+    'zoomTo': ({
+      type: 'layer';
+      /** 图层id */
+      id: string;
+    } | {
+      type: 'viewPort';
+      /** 视点, [lon, lat, height] */
+      viewPort: number[];
+    } | {
+      type: 'home';
+    }) & {
+      /** 动画时长, 默认1s */
+      duration?: number;
     }
   }
 }

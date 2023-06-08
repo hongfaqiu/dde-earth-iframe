@@ -35,6 +35,7 @@ export declare namespace IframeListener {
       /** 经纬度坐标串 */
       positions: number[][];
     }
+    'zoomTo': boolean;
   }
 
 }

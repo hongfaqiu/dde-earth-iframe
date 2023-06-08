@@ -30,7 +30,9 @@
 <script src="./lib/index.umd.js"></script>
 <script>
 
-  const EarthIframeObj = new EarthIframe("iframeContainer");
+  const EarthIframeObj = new EarthIframe("iframeContainer", {
+    baseUrl: 'http://localhost:8000/#/showcase'
+  });
 
   EarthIframeObj.loadPromise.then(async (obj) => {
 
@@ -73,13 +75,16 @@
         },
         method: 'geojson',
         renderOptions: {
-          'label-type': 'vector',
-          'color': {r: 0, g: 255, b: 255, a: 1},
-          'label-size': 5,
-          'icon-size': 1,
-          'circle-stroke-color': {r: 255, g: 255, b: 255, a: 1},
-          'circle-stroke-width': 1,
-          opacity: 1,
+          type: "single",
+          config: {
+            "label-type": "vector",
+            color: { r: 0, g: 255, b: 255, a: 1 },
+            "label-size": 5,
+            "icon-size": 1,
+            "circle-stroke-color": { r: 255, g: 255, b: 255, a: 1 },
+            "circle-stroke-width": 1,
+            opacity: 1,
+          },
         }
       },
       options: {

@@ -5,6 +5,8 @@
 这是一个用于在网页中嵌入DDE-Earth Iframe的npm包。
 在TypeScript环境下，可以免去查阅操作手册的麻烦。
 
+[![CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/dde-earth-iframe-z01sy2)
+
 ## 安装
 
 使用 npm 安装：
