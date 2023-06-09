@@ -34,7 +34,7 @@ export declare namespace IframeListener {
       type: 'POLYGON' | 'POLYLINE' | 'POINT' | 'CIRCLE' | 'RECTANGLE';
       /** 经纬度坐标串 */
       positions: number[][];
-    }
+    };
     'zoomTo': boolean;
   }
 

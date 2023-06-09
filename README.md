@@ -112,6 +112,15 @@ class EarthIframe {
 }
 ```
 
+### Iframe初始化配置项
+
+```ts
+type EarthIframeOptions = {
+  /** iframe url, defaults to "https://deep-time.org/map/#/showcase" */
+  baseUrl?: string;
+} & Iframe.Event['mapConfig'];
+```
+
 ### 可手动触发的Iframe事件
 
 ```ts
@@ -320,7 +329,21 @@ namespace Iframe {
       oneInstance?: boolean;
       /** 画图工具方法 */
       operate: 'start' | 'destroy';
-    }
+    };
+    'zoomTo': ({
+      type: 'layer';
+        /** 图层id */
+        id: string;
+      } | {
+        type: 'viewPort';
+        /** 视点, [lon, lat, height] */
+        viewPort: number[];
+      } | {
+        type: 'home';
+      }) & {
+        /** 动画时长, 默认1s */
+        duration?: number;
+      };
   }
 }
 ```
@@ -361,7 +384,8 @@ namespace IframeListener {
       type: 'POLYGON' | 'POLYLINE' | 'POINT' | 'CIRCLE' | 'RECTANGLE';
       /** 经纬度坐标串 */
       positions: number[][];
-    }
+    };
+    'zoomTo': boolean;
   }
 }
 ```
