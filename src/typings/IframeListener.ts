@@ -36,6 +36,9 @@ export declare namespace IframeListener {
       positions: number[][];
     };
     'zoomTo': boolean;
+    'get:mapConfig': Iframe.Event['mapConfig']
+    'get:layers': Layer.layerManageItem[];
+    'get:dataset': Layer.DataSet[];
   }
 
 }

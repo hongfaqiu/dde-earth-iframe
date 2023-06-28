@@ -110,6 +110,8 @@ export declare namespace Iframe {
       skyAtmosphere?: boolean;
       /** 水汽含量 */
       fogDensity?: number;
+      /** 无底图时的纯色背景css颜色, 默认为#4F4F4F */
+      baseColor?: string;
       /** 底图 */
       baseMap?: Layer.LayerItem;
       /** 注记 */
@@ -220,6 +222,9 @@ export declare namespace Iframe {
     }) & {
       /** 动画时长, 默认1s */
       duration?: number;
-    }
+    };
+    'get:mapConfig': undefined;
+    'get:layers': undefined;
+    'get:dataset': undefined;
   }
 }

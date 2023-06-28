@@ -233,6 +233,8 @@ namespace Iframe {
       skyAtmosphere?: boolean;
       /** 水汽含量 */
       fogDensity?: number;
+      /** 无底图时的纯色背景css颜色, 默认为#4F4F4F */
+      baseColor?: string;
       /** 底图 */
       baseMap?: Layer.LayerItem;
       /** 注记 */
@@ -344,6 +346,9 @@ namespace Iframe {
         /** 动画时长, 默认1s */
         duration?: number;
       };
+    'get:mapConfig': undefined;
+    'get:layers': undefined;
+    'get:dataset': undefined;
   }
 }
 ```
@@ -386,6 +391,9 @@ namespace IframeListener {
       positions: number[][];
     };
     'zoomTo': boolean;
+    'get:mapConfig': Iframe.Event['mapConfig']
+    'get:layers': Layer.layerManageItem[];
+    'get:dataset': Layer.DataSet[];
   }
 }
 ```
