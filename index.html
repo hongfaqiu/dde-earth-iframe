@@ -30,9 +30,7 @@
 <script src="./lib/index.umd.js"></script>
 <script>
 
-  const EarthIframeObj = new EarthIframe("iframeContainer", {
-    baseUrl: 'http://localhost:8000/#/showcase'
-  });
+  const EarthIframeObj = new EarthIframe("iframeContainer");
 
   EarthIframeObj.loadPromise.then(async (obj) => {
 
