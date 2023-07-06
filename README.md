@@ -140,6 +140,23 @@ namespace Iframe {
     'ru-RU' |
     /** 阿拉伯语 */
     'ar-EG'
+
+  type EventType =
+    | 'LEFT_DOWN'
+    | 'LEFT_UP'
+    | 'LEFT_CLICK'
+    | 'LEFT_DOUBLE_CLICK'
+    | 'RIGHT_DOWN'
+    | 'RIGHT_UP'
+    | 'RIGHT_CLICK'
+    | 'MIDDLE_DOWN'
+    | 'MIDDLE_UP'
+    | 'MIDDLE_CLICK'
+    | 'MOUSE_MOVE'
+    | 'WHEEL'
+    | 'PINCH_START'
+    | 'PINCH_MOVE'
+    | 'PINCH_END';
   
   type Event = {
     'addAtom': {
