@@ -30,7 +30,9 @@
 <script type="module">
   import EarthIframe from './lib/index.modern.js';
 
-  const EarthIframeObj = new EarthIframe("iframeContainer");
+  const EarthIframeObj = new EarthIframe("iframeContainer", {
+    baseUrl: 'http://localhost:8000/#/showcase',
+  });
 
   EarthIframeObj.loadPromise.then(async (obj) => {
 
@@ -93,6 +95,10 @@
     // 显示图层管理，但隐藏数据集管理
     obj.dispatch("componentConfig", { 
       layerManage: {} 
+    });
+    const coors = await obj.dispatch("drawer", {
+      type: "POLYGON",
+      operate: "start",
     });
   });
 

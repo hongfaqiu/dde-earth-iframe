@@ -1,6 +1,11 @@
 import { IframeListener } from "./typings/IframeListener";
 import { Iframe } from "./typings/iframe";
 
+export { API } from './typings/api';
+export { GeojsonStyle } from './typings/geojsonStyle';
+export { Iframe } from './typings/iframe';
+export { Layer } from './typings/layer';
+
 type EarthIframeOptions = {
   /** iframe url, defaults to "https://deep-time.org/map/#/showcase" */
   baseUrl?: string;
@@ -193,4 +198,3 @@ export default class EarthIframe {
     this._loaded = false;
   }
 }
-
