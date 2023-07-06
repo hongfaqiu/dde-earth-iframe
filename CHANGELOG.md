@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.2.0...v1.3.0) (2023-07-06)
+
+
+### Features
+
+* 绘图增加配置项，矩形绘制默认返回四个顶点 ([0529309](https://github.com/hongfaqiu/dde-earth-iframe/commit/05293096c2dfd71e49b1373e9fc313c7534ea480))
+
 # [1.2.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.1.0...v1.2.0) (2023-06-28)
 
 
