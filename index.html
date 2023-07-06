@@ -89,15 +89,25 @@
         zoom: true
       }
     })
+    
+    // 打开图层管理
+    obj.dispatch('openTool', {
+      tool: 'layerManager'
+    })
 
-    // 显示图层管理，但隐藏数据集管理
-    obj.dispatch("componentConfig", { 
-      layerManage: {} 
-    });
-    const coors = await obj.dispatch("drawer", {
-      type: "POLYGON",
-      operate: "start",
-    });
+    // 打开图例
+    obj.dispatch('openTool', {
+      tool: 'legend',
+      style: {
+        right: 20,
+        bottom: 60,
+        width: 200
+      },
+      bounds: {
+        right: 10,
+        bottom: 20
+      }
+    })
   });
 
 </script>
