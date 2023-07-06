@@ -30,9 +30,7 @@
 <script type="module">
   import EarthIframe from './lib/index.modern.js';
 
-  const EarthIframeObj = new EarthIframe("iframeContainer", {
-    baseUrl: 'http://localhost:8000/#/showcase',
-  });
+  const EarthIframeObj = new EarthIframe("iframeContainer");
 
   EarthIframeObj.loadPromise.then(async (obj) => {
 
