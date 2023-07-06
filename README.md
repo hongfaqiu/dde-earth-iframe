@@ -320,17 +320,58 @@ namespace Iframe {
     'drawer': {
       /** 绘制的图形类型 */
       type: 'POLYGON' | 'POLYLINE' | 'POINT' | 'CIRCLE' | 'RECTANGLE';
+      /** 画图工具方法 */
+      operate: 'start' | 'destroy';
+      drawOptions?: {
+        /**
+         * 是否使用地形，当开启时需要浏览器支持地形选取功能，如果不支持将会被关闭
+         */
+        terrain?: boolean;
+        /**
+         * 操作方式
+         */
+        operateType?: {
+          /**
+           * @desc 勾画开始事件
+           * @type EventType
+           * @default LEFT_CLICK
+           */
+          START?: EventType;
+          /**
+           * @desc 勾画移动事件
+           * @type EventType
+           * @default MOUSE_MOVE
+           */
+          MOVING?: EventType;
+          /**
+           * @desc 勾画撤销事件
+           * @type EventType
+           * @default RIGHT_CLICK
+           */
+          CANCEL?: EventType;
+          /**
+           * @desc 勾画结束事件
+           * @type EventType
+           * @default LEFT_DOUBLE_CLICK
+           */
+          END?: EventType;
+        };
+        /** 勾画时的鼠标提示文字 */
+        tips?: {
+          init?: string | Element;
+          start?: string | Element;
+          end?: string | Element;
+        };
+      };
       /**
        * 是否只勾画一次，如果设为true，则在第一勾画结束时停止
        * @default undefined
        */
       once?: boolean;
       /**
-       * 是否使用单例模式，如果开启，当勾画第二个图形时会销毁第一个图形
+       * @desc 是否使用单例模式，如果开启，当勾画第二个图形时会销毁第一个图形
        */
       oneInstance?: boolean;
-      /** 画图工具方法 */
-      operate: 'start' | 'destroy';
     };
     'zoomTo': ({
       type: 'layer';
