@@ -1,6 +1,6 @@
 {
   "name": "dde-earth-iframe",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "npmClient": "pnpm",
   "packageManager": "pnpm@8.5.0",
   "description": "DDE Earth Iframe sdk",

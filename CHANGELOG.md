@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.3.0...v1.4.0) (2023-07-06)
+
+
+### Features
+
+* openTool 支持打开图层管理、数据集管理、图例页面 ([c47601e](https://github.com/hongfaqiu/dde-earth-iframe/commit/c47601ea5be1a5a83152cdf8be12873b4e066d47))
+
 # [1.3.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.2.0...v1.3.0) (2023-07-06)
 
 
