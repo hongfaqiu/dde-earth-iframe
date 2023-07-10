@@ -160,7 +160,11 @@ export declare namespace Iframe {
       antiAliasing?: boolean;
       /** 版权信息 intellectualGraphVis是否展示 默认展示 intellectualGraphPos展示位置 不传默认是右下 */
       intellectualGraphVis?: boolean;
-      intellectualGraphPos?: 'leftBottom' | 'rightBottom'
+      intellectualGraphPos?: 'leftBottom' | 'rightBottom';
+      /** 是否显示卷帘工具 */
+      layerCompareTool?: boolean;
+      /** 地球的背景色 */
+      backgroundColor?: string;
     };
     'cartography': {
       show: boolean;

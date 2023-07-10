@@ -282,7 +282,11 @@ namespace Iframe {
       antiAliasing?: boolean;
       /** 版权信息 intellectualGraphVis是否展示 默认展示 intellectualGraphPos展示位置 不传默认是右下 */
       intellectualGraphVis?: boolean;
-      intellectualGraphPos?: 'leftBottom' | 'rightBottom'
+      intellectualGraphPos?: 'leftBottom' | 'rightBottom';
+      /** 是否显示卷帘工具 */
+      layerCompareTool?: boolean;
+      /** 地球的背景色 */
+      backgroundColor?: string;
     };
     'cartography': {
       show: boolean;
@@ -409,6 +413,51 @@ namespace Iframe {
     'get:dataset': undefined;
   }
 }
+```
+
+### 默认的地图配置
+
+```ts
+const DefaultMapConfig = {
+  navigator: true,
+  intellectualGraphVis: true,
+  intellectualGraphPos: undefined,
+  displayMode: 1,
+  skyAtmosphere: true,
+  fogDensity: 0.0001,
+  baseMap: {
+    id: '底图-ESRI影像底图',
+    method: 'arcgis',
+    url: 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer',
+  },
+  annotationMap: {},
+  terrain: {},
+  mapStatusBar: true,
+  viewerModeSwitch: true,
+  measureTool: true,
+  cameraController: true,
+  ajaxBar: true,
+  performance: 1.0,
+  terrainExaggeration: 1.0,
+  graticules: false,
+  antiAliasing: false,
+  translucency: {
+    enable: false,
+    fadeByDistance: true,
+    alpha: 0.5,
+  },
+  geoTimeLine: true,
+  geoTime: {
+    version: 'ICS2020',
+    name: 'Geologic Time',
+    scale: true,
+    base: 0,
+    top: 0
+  },
+  backgroundColor: '#00000099',
+  layerCompareTool: true,
+  baseColor: '#4F4F4F',
+};
 ```
 
 ### 可监听的Iframe事件
