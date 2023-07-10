@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.4.0...v1.5.0) (2023-07-10)
+
+
+### Features
+
+* 增加地球基本色/背景色配置 ([31b7681](https://github.com/hongfaqiu/dde-earth-iframe/commit/31b76811efdb09f39dbc44112d4f3c4abf04a48f))
+
 # [1.4.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.3.0...v1.4.0) (2023-07-06)
 
 
