@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.5.0...v1.6.0) (2023-07-17)
+
+
+### Features
+
+* 增加工具面板开关回调 ([827087c](https://github.com/hongfaqiu/dde-earth-iframe/commit/827087ca01bc6bcfe26f43de193364041195c911))
+
 # [1.5.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.4.0...v1.5.0) (2023-07-10)
 
 
