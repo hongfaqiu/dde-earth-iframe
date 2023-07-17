@@ -39,6 +39,11 @@ export declare namespace IframeListener {
     'get:mapConfig': Iframe.Event['mapConfig']
     'get:layers': Layer.layerManageItem[];
     'get:dataset': Layer.DataSet[];
+    /** 工具开关回调 */
+    'toolVisible': {
+      key: Iframe.Event['openTool']['tool'];
+      show: boolean;
+    }
   }
 
 }

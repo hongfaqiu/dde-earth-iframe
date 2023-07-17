@@ -304,15 +304,20 @@ namespace Iframe {
       | 'contourLine' // 等高线地形分析
       | 'COG2Terrain' // 栅格cog转地形
       | 'ImgToAudio' // 图像转声音
+      | 'layerManager' //图层管理
+      | 'datasetManager' // 数据集管理
+      | 'legend' // 图例
+
       /** 默认为true,打开工具 */
       show?: boolean;
 
-      /** 工具面板的定位, 默认定位到左上角 */
+      /** 工具面板的样式，默认定位到左上角 */
       style?: {
         right?: number;
         left?: number;
         top?: number;
         bottom?: number;
+        [key: string]: any;
       };
       /** 工具面板拖拽限制 */
       bounds?: {
@@ -501,6 +506,11 @@ namespace IframeListener {
     'get:mapConfig': Iframe.Event['mapConfig']
     'get:layers': Layer.layerManageItem[];
     'get:dataset': Layer.DataSet[];
+    /** 工具开关回调 */
+    'toolVisible': {
+      key: Iframe.Event['openTool']['tool'];
+      show: boolean;
+    }
   }
 }
 ```
