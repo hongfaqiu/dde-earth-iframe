@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.6.0...v1.7.0) (2023-07-24)
+
+
+### Features
+
+* 增加图例开关和地名查询工具 ([119e519](https://github.com/hongfaqiu/dde-earth-iframe/commit/119e5198393cdd37c0aeb6951d9355cfdc2bc889))
+
 # [1.6.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.5.0...v1.6.0) (2023-07-17)
 
 
