@@ -165,6 +165,12 @@ export declare namespace Iframe {
       layerCompareTool?: boolean;
       /** 地球的背景色 */
       backgroundColor?: string;
+      /** 是否显示图例工具 */
+      legendSwitchTool?: boolean;
+      /** 是否显示图例 */
+      showLegend?: boolean;
+      /** 是否显示地名查询工具 */
+      geocoderTool?: boolean;
     };
     'cartography': {
       show: boolean;
@@ -173,18 +179,15 @@ export declare namespace Iframe {
     'openTool': {
       tool:
       | 'geoReconstruct' //古地理重建工具
-      | 'layerSplit' // 卷帘工具
       | 'layerVideo' // 图集播放工具
       | 'customLayer' // 自定义添加图层
       | 'customGeoJson' // 自定义创建geojson
-      | 'geocoder' // 地理位置查询
       | 'depthDataClip' // 深部数据裁剪
       | 'contourLine' // 等高线地形分析
       | 'COG2Terrain' // 栅格cog转地形
       | 'ImgToAudio' // 图像转声音
       | 'layerManager' //图层管理
       | 'datasetManager' // 数据集管理
-      | 'legend' // 图例
 
       /** 默认为true,打开工具 */
       show?: boolean;
