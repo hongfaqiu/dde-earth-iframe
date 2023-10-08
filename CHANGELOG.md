@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.7.0...v1.8.0) (2023-10-08)
+
+
+### Features
+
+* update cluster & tool config ([27280e5](https://github.com/hongfaqiu/dde-earth-iframe/commit/27280e5a53e36c86df3c9d497ad41e82fb2e5f41))
+
 # [1.7.0](https://github.com/hongfaqiu/dde-earth-iframe/compare/v1.6.0...v1.7.0) (2023-07-24)
 
 
