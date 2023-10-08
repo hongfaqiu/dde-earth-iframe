@@ -200,6 +200,8 @@ export declare namespace Iframe {
         bottom?: number;
         [key: string]: any;
       };
+      /** 工具面板内容的样式 */
+      contentStyle?: any;
       /** 工具面板拖拽限制 */
       bounds?: {
         right?: number;

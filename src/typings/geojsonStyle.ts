@@ -65,10 +65,14 @@ export declare namespace GeojsonStyle {
    * 点聚类渲染条件
    */
   type ClusterOptions = {
-    enable?: boolean
-    pixelRange?: number
-    minimumClusterSize?: number
-  }
+    enable?: boolean;
+    pixelRange?: number;
+    minimumClusterSize?: number;
+    alpha?: number;
+    scale?: number;
+    maxNum?: number;
+    colorBar?: string[];
+  };
   
   type PointSingleStyle = {
     type: 'single',
